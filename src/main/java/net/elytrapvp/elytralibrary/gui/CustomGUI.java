@@ -24,6 +24,8 @@ public abstract class CustomGUI
         uuid = UUID.randomUUID();
         inventory = Bukkit.createInventory(null, size, ChatUtils.translate(name));
         actions = new HashMap<>();
+
+        inventories.put(uuid, this);
     }
 
     public static Map<UUID, CustomGUI> getInventories()
@@ -44,6 +46,7 @@ public abstract class CustomGUI
             if(u.equals(getUuid()))
                 p.closeInventory();
         }
+
         inventories.remove(getUuid());
     }
 

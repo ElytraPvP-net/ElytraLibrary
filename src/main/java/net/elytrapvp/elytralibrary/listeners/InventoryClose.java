@@ -16,11 +16,14 @@ public class InventoryClose implements Listener
         Player p = (Player) e.getPlayer();
         UUID pU = p.getUniqueId();
 
-        UUID iU = CustomGUI.getOpenInventories().get(pU);
-        CustomGUI gui = CustomGUI.getInventories().get(iU);
-        gui.delete();
+        if(CustomGUI.getOpenInventories().containsKey(pU))
+        {
+            UUID iU = CustomGUI.getOpenInventories().get(pU);
+            CustomGUI gui = CustomGUI.getInventories().get(iU);
+            gui.delete();
 
-        CustomGUI.getOpenInventories().remove(pU);
+            CustomGUI.getOpenInventories().remove(pU);
+        }
     }
 
 }
