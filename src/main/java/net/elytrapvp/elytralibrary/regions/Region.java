@@ -3,6 +3,8 @@ package net.elytrapvp.elytralibrary.regions;
 import org.bukkit.Location;
 import org.bukkit.World;
 
+import java.util.Collection;
+
 /**
  * Represents an area between 2 locations.
  * @author partykid4
@@ -19,6 +21,8 @@ public class Region
     private int minY;
     private int minZ;
     private String name;
+
+    private static Collection<Region> regions;
 
     /**
      * Create a new Region
@@ -52,6 +56,17 @@ public class Region
         minZ = Math.min(z1, z2);
 
         name = "";
+
+        regions.add(this);
+    }
+
+    /**
+     * Get a Collection of all regions
+     * @return Collection of all regions.
+     */
+    public static Collection<Region> getRegions()
+    {
+        return regions;
     }
 
     /**
