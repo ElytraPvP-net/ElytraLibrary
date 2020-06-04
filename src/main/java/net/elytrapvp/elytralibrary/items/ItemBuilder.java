@@ -76,6 +76,15 @@ public class ItemBuilder
     }
 
     /**
+     * Set the item stack
+     * @param item item Stack
+     */
+    protected void setItem(ItemStack item)
+    {
+        this.item = item;
+    }
+
+    /**
      * Set the lore of an item.
      * @param lore
      */
