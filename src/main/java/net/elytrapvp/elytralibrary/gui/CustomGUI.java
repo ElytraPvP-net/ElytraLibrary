@@ -40,13 +40,6 @@ public abstract class CustomGUI
 
     public void delete()
     {
-        for(Player p : Bukkit.getOnlinePlayers())
-        {
-            UUID u = openInventories.get(p.getUniqueId());
-            if(u.equals(getUuid()))
-                p.closeInventory();
-        }
-
         inventories.remove(getUuid());
     }
 
